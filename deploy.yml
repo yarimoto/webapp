@@ -4,14 +4,14 @@
   become: true
 
   pre_tasks:
-    - name: Install EPEL repo
+    - name: Install some package
       package: name={{ item }} state=present
       when: ansible_distribution == "CentOS"
       loop:
         - epel-release
         - git
         - wget
-    - name: Download Pip Script
+    - name: Download pip script
       get_url:
         url: https://bootstrap.pypa.io/pip/2.7/get-pip.py
         dest: /tmp/get-pip.py
