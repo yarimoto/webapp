@@ -3,7 +3,7 @@
   hosts: prod
   become: true
   vars_files:
-    files/secrets/credentials.vault
+    - files/secrets/credentials.vault
 
   pre_tasks:
     - name: Install some package
